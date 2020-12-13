@@ -26,6 +26,13 @@ body{
     padding-right: 25%;
     padding-top: 30px;
 }
+@media only screen and (max-width: 600px) {
+    .sectionB {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 .sectionC{
     background-color: white;
     padding-left: 25%;
@@ -133,7 +140,9 @@ body{
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .card {
     background-color: #242424;
@@ -142,4 +151,23 @@ body{
     flex: 0 1 49%;
     height: 500px;
     margin-bottom: 20px;
+    padding: 20px;
+}
+.card a {
+    padding: 15px;
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #383838;
+    margin: 10px;
+}
+.card a:hover {
+    background-color: #535353;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        flex: 0 1 99%;
+    }
 }
