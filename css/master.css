@@ -51,9 +51,9 @@ body{
     flex-direction: column;
     justify-content:center;
     align-items:center;
-    width: 35%;
     text-align: center;
 }
+
 
 .sectionA-container h1 {
     font-size: 3em;
@@ -67,7 +67,17 @@ body{
     width: 100%;
     border-color: #777777;
 }
+@media only screen and (max-width: 600px) {
+    .profilePicture {
+      width: 200px;
+      height: 200px;
+    }
+    .sectionA-container {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
 
+  }
 .icon-container {
     display: inline;
     display: flex;
@@ -76,12 +86,11 @@ body{
 }
 
 .icon-container button{
-  width: 150px;
+  width: 30%;
   background-color:white;
   border: none;
   color: #353535;
-  padding: 12px 80px;
-  margin: 20px 20px 0px 20px;
+  padding: 12px 12px;
   font-size: 16px;
   cursor: pointer;
   display: flex;
@@ -95,19 +104,16 @@ body{
 }
 .icon-container button:focus { outline: none; }
 
-
 .navBar {
-    float: right;
-    height: 50px;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     position:absolute;
     margin-top: 50px;
-    padding-right: 50px;
 }
 
 .navBar a {
-    padding-right: 15px;
+    padding: 15px;
     font-size: 2em;
     color: #535353;
     text-decoration: none;
@@ -115,4 +121,25 @@ body{
 
 .navBar a:hover {
     color: #242424;
+    background-color: #d1d1d1;
+}
+@media only screen and (max-width: 600px) {
+    .navBar {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card {
+    background-color: #242424;
+    box-shadow: 0px 10px 10px #1f1f1f;
+    border-radius: 10px;
+    flex: 0 1 49%;
+    height: 500px;
+    margin-bottom: 20px;
 }
