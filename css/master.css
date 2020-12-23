@@ -35,9 +35,13 @@ body{
 
 .sectionC{
     background-color: white;
-    padding-left: 25%;
-    padding-right: 25%;
     padding-top: 30px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.sectionC h1{
+    font-size: 3em;
 }
 
 .profilePicture {
@@ -53,7 +57,7 @@ body{
 }
 
 .sectionA-container {
-    color: #383838;
+    color: #3b3b3b;
     display:flex;
     flex-direction: column;
     justify-content:center;
@@ -67,8 +71,8 @@ body{
     margin-bottom: 0.2em;
 }
 
-.sectionA-container h3 {
-    font-size: 1.3em;
+.sectionA-container P {
+    font-size: 1.6em;
 }
 .sectionA-container hr {
     width: 100%;
