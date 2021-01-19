@@ -25,6 +25,7 @@ body{
     padding-top: 30px;
     padding-left: 75px;
     padding-right: 75px;
+    padding-bottom: 30px;
 }
 @media only screen and (max-width: 800px) {
     .sectionB {
@@ -38,6 +39,7 @@ body{
     padding-top: 30px;
     padding-left: 20%;
     padding-right: 20%;
+    padding-bottom: 30px;
 }
 
 .sectionC h1{
@@ -196,4 +198,16 @@ body{
 .card .text-container {
     padding: 15px;
     margin-bottom: 50px;
+}
+
+.sectionD {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    color: white;
+    padding-top: 30px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 30px;
 }
