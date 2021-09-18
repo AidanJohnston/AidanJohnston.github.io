@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "tf2secondary";
+    src: url('../fonts/TF2secondary.ttf');
+}
 * {
     margin: 0;
     padding: 0;
@@ -213,9 +217,16 @@ body{
 }
 
 .sectionD a {
-    color: white;
+    color: rgb(255, 241, 202);
     text-decoration: none;
     cursor: pointer;
+    font-family: 'tf2secondary';
+    text-shadow: 2px 2px 0px #414141;
+}
+.sectionD p{
+    color: white;
+    font: bold;
+    margin-right: 10px;
 }
 
 .sectionF{
