@@ -3,4 +3,22 @@ layout: default
 permalink: /
 ---
 
-<p>Test</p>
+<div class="sectionA">
+    Test
+</div>
+<div class="sectionB">
+    <h1>Projects</h1>
+    <div class="card-container">
+        {% for post in site.posts %}
+        <div class="card">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.excerpt }}</p>
+          <div class="text-container">
+            <a href="{{ post.url }}">See Project</a>
+          </div>
+        </div>
+        
+        
+      {% endfor %}
+    </div>
+</div>
