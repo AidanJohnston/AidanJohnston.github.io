@@ -4,7 +4,17 @@ permalink: /
 ---
 
 <div class="sectionA">
-    Test
+    <div class="sectionA-container">
+      <div class="profilePicture"></div>
+      <h1>Aidan Johnston</h1>
+      <p>Software Engineering Student</p>
+      <hr>
+      <div class="icon-container">
+        <button>Github</button>
+        <button>LinkedIn</button>
+        <button>Twitter</button>
+      </div>
+    </div>
 </div>
 <div class="sectionB">
     <h1>Projects</h1>
@@ -12,13 +22,16 @@ permalink: /
         {% for post in site.posts %}
         <div class="card">
           <h2>{{ post.title }}</h2>
-          <p>{{ post.excerpt }}</p>
-          <div class="text-container">
-            <a href="{{ post.url }}">See Project</a>
+          <div class="tag-container">
+            {% for tag in post.tags%}
+            <div class="tag">
+              <p>{{ tag }}</p>
+            </div>
+            {% endfor %}
           </div>
+          <p>{{ post.excerpt }}</p>
+          <a href="{{ post.url }}">See Project</a>
         </div>
-        
-        
-      {% endfor %}
+        {% endfor %}
     </div>
-</div>
+  </div>

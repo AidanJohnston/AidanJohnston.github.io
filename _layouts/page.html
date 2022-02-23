@@ -2,19 +2,19 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\assets\css\master.css">
-    <title>{{ title }}</title>
-    <title>{{ title }}</title>
-</head>
-<body>
-    {% include navigation.html %}
-    <div class="sectionA">
-        {{ content }}
-    </div>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/css/master.css">
+        <link rel="stylesheet" href="/assets/css/markdown.css">
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        {% include navigationDark.html%}
+        <div class="sectionC">
+                {{ content }}
+        </div>
     
-    {% include footer.html %}
-</body>
+        {% include footer.html %}
+    </body>
 </html>

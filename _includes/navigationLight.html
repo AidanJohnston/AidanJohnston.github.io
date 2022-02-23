@@ -1,0 +1,7 @@
+<nav class="navBar light">
+    {% for item in site.data.navigation %}
+      <a href="{{ item.link }}" {% if page.url == item.link %}style="font-weight: bolder; "{% endif %}>
+        {{ item.name }}
+      </a>
+    {% endfor %}
+</nav>

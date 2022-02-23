@@ -16,7 +16,6 @@ body{
 }
 
 .sectionA{
-    background-color: white;
     height: 100vh;
     display:flex;
     justify-content:center;
@@ -31,7 +30,7 @@ body{
     padding-right: 75px;
     padding-bottom: 30px;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .sectionB {
         padding-left: 20px;
         padding-right: 20px;
@@ -44,6 +43,18 @@ body{
     padding-left: 20%;
     padding-right: 20%;
     padding-bottom: 30px;
+    min-height: 100%;
+    height: auto !important; /*min-height hack*/
+    height: 100%;  
+    font: 1em;
+}
+
+@media only screen and (max-width: 800px) {
+    .sectionC {
+        padding-left: 10%;
+        padding-right: 10%;
+        font: 2em;
+    }
 }
 
 .sectionC h1{
@@ -132,17 +143,36 @@ body{
     margin-top: 50px;
 }
 
-.navBar a {
+.light a {
     padding: 15px;
     font-size: 2em;
     color: #535353;
     text-decoration: none;
 }
 
-.navBar a:hover {
+.light a:hover {
     color: #242424;
     background-color: #d1d1d1;
 }
+
+.dark {
+    background-color: #121212;
+    position:relative !important;
+    margin-top: 0px !important;
+}
+
+.dark a {
+    padding: 15px;
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+}
+
+.dark a:hover {
+    color: #d1d1d1;
+    background-color: #535353;
+}
+
 @media only screen and (max-width: 600px) {
     .navBar {
         position: static;
@@ -161,10 +191,11 @@ body{
 .card {
     background-color: #242424;
     box-shadow: 0 1px 10px #050505;
-    flex: 0 0 51%;
-    margin: 1%;
+    flex: 0 0 65%;
     margin-bottom: 20px;
     transition: 0.3s;
+    box-sizing: content-box;
+    display:inline-block;
     padding: 15px;
 }
 
@@ -184,23 +215,34 @@ body{
     cursor: pointer;
     background-color: #383838;
     padding: 15px;
-    bottom: 0;
+    position: relative;
 }
 .card a:hover {
     background-color: #535353;
 }
 
+.tag-container {
+    display: flex;
+    align-content: center;
+}
+
+.tag-container p {
+    background-color: #383838;
+    color: white;
+    margin: 10px;
+    border-radius: 3px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em !important;
+}
 
 .card img{
     object-fit:cover;
     border-radius:  10px 10px 0 0;
     width: 100%;
     height: 300px;
-}
-
-.card  {
-    padding: 15px;
-    margin-bottom: 50px;
 }
 
 .sectionD {
@@ -210,9 +252,10 @@ body{
     background-color: #121212;
     color: white;
     padding-top: 30px;
-    padding-left: 75px;
-    padding-right: 75px;
     padding-bottom: 30px;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;  
 }
 
 .sectionD a {
@@ -230,4 +273,46 @@ body{
 
 .sectionF{
     color:white;
+}
+
+.link {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.link .span {
+    float: left;
+    width: 20px;
+    height: 20px;
+}  
+
+.link.github {
+    background-color: #353535;
+}
+
+.link.github.icon {
+    background: url(/assets/img/GitHub-Mark-Light-120px-plus.png) no-repeat;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px
+}  
+
+.link.colab {
+    background-color: #faab00;
+}
+
+.link.colab.icon{
+    background: url(/assets/img/GitHub-Mark-Light-120px-plus.png) no-repeat;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
