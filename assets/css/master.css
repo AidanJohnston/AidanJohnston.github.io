@@ -51,8 +51,8 @@ body{
 
 @media only screen and (max-width: 800px) {
     .sectionC {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 4%;
+        padding-right: 4%;
         font: 2em;
     }
 }
