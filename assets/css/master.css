@@ -10,7 +10,7 @@ html {
     scroll-behavior: smooth;
 }
 body{
-    font-family: 'Helvetica ', sans-serif;
+    font-family: 'Nunito', sans-serif;
     width: 100%;
     height: 100%;
 }
@@ -49,7 +49,7 @@ body{
     font: 1em;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .sectionC {
         padding-left: 4%;
         padding-right: 4%;
@@ -155,20 +155,29 @@ body{
     background-color: #d1d1d1;
 }
 
-.dark {
-    background-color: #121212;
-    position:relative !important;
-    margin-top: 0px !important;
+.navdark {
+        display: flex;
+        top:0;
+        width: 100%;
+        background-color: #121212;
+        overflow: auto;
+        height: auto;
 }
 
-.dark a {
+.navdark.left {
+    flex:1 1 200px;
+}
+
+.navdark a {
+    display: inline-block;
+    text-align: center;
     padding: 15px;
     font-size: 2em;
     color: white;
     text-decoration: none;
 }
 
-.dark a:hover {
+.navdark a:hover {
     color: #d1d1d1;
     background-color: #535353;
 }
@@ -213,12 +222,9 @@ body{
     color: white;
     text-decoration: none;
     cursor: pointer;
-    background-color: #383838;
-    padding: 15px;
-    position: relative;
 }
 .card a:hover {
-    background-color: #535353;
+    text-decoration: underline;
 }
 
 .tag-container {
@@ -283,7 +289,7 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -295,6 +301,10 @@ body{
 
 .link.github {
     background-color: #353535;
+}
+
+.link.github:hover {
+    background-color: #242424;
 }
 
 .link.github.icon {
@@ -309,6 +319,9 @@ body{
     background-color: #faab00;
 }
 
+.link.colab:hover {
+    background-color: #b87d00;
+}
 .link.colab.icon{
     background: url(/assets/img/GitHub-Mark-Light-120px-plus.png) no-repeat;
     float: left;
