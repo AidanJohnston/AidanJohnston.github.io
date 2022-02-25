@@ -26,18 +26,18 @@ however the second byte is unused. The first byte holds the opcode to define the
 Mnemonic  | Op-Code  | Function
 :-------:|:-------:|:-------:
 NOP | 0 | Nothing
-ADD | 1 | <img src='img/image2.png'><br><img src='img/image3.png'><br><img src='img/image4.png'>
-SUB | 2| <img src='img/image5.png'><br><img src='img/image6.png'><br><img src='img/image7.png'>
-NAND | 3| <img src='img/image8.png'><br><img src='img/image9.png'><br><img src='img/image10.png'>
-SHL | 4| <img src='img/image11.png'><br><img src='img/image12.png'>
-SHR | 5| <img src='img/image13.png'><br><img src='img/image14.png'>
-OUT | 6| <img src='img/image15.png'>
-IN | 7| <img src='img/image16.png'>
-MOV |8| <img src='img/image17.png'>
+ADD | 1 | <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image2.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image3.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image4.png'>
+SUB | 2| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image5.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image6.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image7.png'>
+NAND | 3| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image8.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image9.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image10.png'>
+SHL | 4| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image11.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image12.png'>
+SHR | 5| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image13.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image14.png'>
+OUT | 6| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image15.png'>
+IN | 7| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image16.png'>
+MOV |8| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image17.png'>
 
 *Table 1: A-Format Instructions*
 
-<img src='img/AFormat.png'>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/AFormat.png'>
 
 *Figure 1: A-Format Instructions*
 
@@ -46,15 +46,15 @@ B-format is used for branch instructions. Instructions are two bytes, the first 
 
 Mnemonic  | Op-Code  | Function
 :-------:|:-------:|:-------:
-BR |9| <img src='img/image18.png'>
-BR.Z |10| <img src='img/image19.png'><br><img src='img/image20.png'>
-BR.N |10| <img src='img/image21.png'><br><img src='img/image22.png'>
-BR.SUB |11| <img src='img/image23.png'><br><img src='img/image18.png'>
-RETURN |12| <img src='img/image24.png'>
+BR |9| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image18.png'>
+BR.Z |10| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image19.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image20.png'>
+BR.N |10| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image21.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image22.png'>
+BR.SUB |11| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image23.png'><br><img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image18.png'>
+RETURN |12| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image24.png'>
 
 *Table 2: B-Format Instructions*
 
-<img src='img/BFormat.png'>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/BFormat.png'>
 
 *Figure 2: B-Format Instructions*
 ### L-Format
@@ -62,13 +62,13 @@ L-format is used for load and store instructions. Instructions are two bytes, th
 
 Mnemonic  | Op-Code  | Function
 :-------:|:-------:|:-------:
-LOAD |13| <img src='img/image25.png'>
-STORE |14| <img src='img/image26.png'>
-LOADIMM |15| <img src='img/image27.png'>
+LOAD |13| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image25.png'>
+STORE |14| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image26.png'>
+LOADIMM |15| <img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image27.png'>
 
 *Table 3: L-Format Instructions*
 
-<img src='img/LFormat.png'>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/LFormat.png'>
 
 *Figure 2: L-Format Instructions*
 
@@ -77,46 +77,46 @@ To build our processor, we used the provided instruction set to guide our design
 main components needed for our design. Before coding our modules for each component, we
 needed to determine the data paths for each instruction format which are shown below.
 ### A-Format Data Path
-<img src='img/image30.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image30.png'></img>
 *Figure 4: ADD, SUB, NAND Data Path*
 
 
-<img src='img/image40.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image40.png'></img>
 *Figure 5: SHL and SHR Data Path*
 
-<img src='img/image43.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image43.png'></img>
 *Figure 6: OUT Data Path*
 
-<img src='img/image35.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image35.png'></img>
 *Figure 7: IN Data Path*
 
-<img src='img/image38.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image38.png'></img>
 *Figure 8: MOV Data Path*
 
 ### B-Format Data Path
-<img src='img/image39.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image39.png'></img>
 *Figure 9: BR, BRZ, BRN Data Path*
 
-<img src='img/image31.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image31.png'></img>
 *Figure 10: BR_SUB Data Path*
 
-<img src='img/image33.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image33.png'></img>
 *Figure 11: RETURN Data Path*
 
 ### L-Format Data Path
 
-<img src='img/image44.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image44.png'></img>
 *Figure 12: LOAD Data Path*
 
-<img src='img/image46.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image46.png'></img>
 *Figure 13: STORE Data Path*
 
-<img src='img/image45.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image45.png'></img>
 *Figure 13: LOADIMM Data Path*
 
 ## Components
 ### Single Cycle Processor
-<img src='img/image29.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image29.png'></img>
 *Figure 15: Full Single Cycle Processor Diagram*
 
 
@@ -129,7 +129,7 @@ memory module looks up the memory address given and the memory address given plu
 These two values are concatenated together for the output. A diagram of the instruction memory
 can be seen in figure 16.
 
-<img src='img/image41.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image41.png'></img>
 
 *Figure 16: Full Single Cycle Processor Diagram*
 
@@ -165,20 +165,20 @@ The control module is responsible for setting certain flags on or off.  These fl
 ### Registers
 The register module has two jobs; reading from registers and writing to registers.  For reading, the module is given two 2-bit values to lookup.  The module then outputs these values through Read Data 1 and Read Data 2.  Some OPCodes make use of the second byte in the instruction (bits 15 - 8 of the instruction).  To handle this, the second bytes and Read Data 2 are passed through a 2-1 MUX controlled by the useEA flag.  When writing to registers, the register module uses WriteReg as the index for which register to write to and writeData as the value to write to.  The module attempts to write each clock cycle.  The module will not write unless the regWrite flag is raised.
 
-<img src='img/image37.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image37.png'></img>
 
 *Figure 18: Registers Modules Diagram*
 
 ### Link Registers
 The link register is used to store the next PC address during subroutine branch operations, and can restore the PC value to the stored state after the subroutine has returned. It also sets the PC to the Ea value during BR, BR.Z, and BR.N operations. 
 
-<img src='img/image32.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image32.png'></img>
 
 *Figure 19: Link Register Diagram*
 ### ALU
 The ALU module will perform different operations on its inputs value1 and value2 depending on the ALUOP flag. Table 1,2 and 3 show the respective operations for each ALUOP.  The ALU will raise the zero and negative flag in some cases.  These cases can be seen in table 1.   
 
-<img src='img/image36.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image36.png'></img>
 
 *Figure 20: ALU Module Diagram*
 
@@ -186,7 +186,7 @@ The ALU module will perform different operations on its inputs value1 and value2
 The Data Memory module performs three operations; reading from data memory, writing to data memory and passing the ALU result to the register module.  If the memWrite flag is raised, the module will write readData1 into data memory at the value of ALUResult.  If the memRead flag is raised, it will read a value at ALUResult and send it to readData.  If the memToReg flag is not raised, the ALU value is passed through the 2-1 mux and then to the register module.           
 
 
-<img src='img/image42.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image42.png'></img>
 
 *Figure 22: Data Memory Module Diagram*
 
@@ -194,7 +194,7 @@ The Data Memory module performs three operations; reading from data memory, writ
 
 For this project we were able to design and implement an 8-bit single cycle processor successfully. Given the provided instruction set we were able to design datapaths for each instruction type and then code each component in Verilog. We were able to simulate our CPU in ModelSim with a given instruction memory which gave us our desired output shown below.
 
-<img src='img/image28.png'></img>
+<img src='https://github.com/AidanJohnston/SingleCycleProcessor/blob/main/img/image28.png'></img>
 *Figure 23: CPU Waveform for Provided Instruction Memory in ModelSim*
 
 The expected output of the CPU module when given a steady clock cycle is 0x81, 0xC3, 0xE7, 0xFF, 0xE7, 0xC3, 0x81.  These outputs will repeat indefinitely, as seen in figure 21.  The CPU module outputted the expected value.
