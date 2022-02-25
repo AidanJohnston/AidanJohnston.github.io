@@ -1,4 +1,6 @@
-- name: Home
+- name: Aidan Johnston
   link: /
+- name: Projects
+  link: /#projects
 - name: About
   link: /about/
