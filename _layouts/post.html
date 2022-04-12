@@ -2,7 +2,7 @@
 layout: page
 ---
 <h1>{{ page.title }}</h1>
-<p>Date: {{ page.date | date_to_string }}</p>
+<p>Date: {{ page.date | date_to_string }}</p>       
 <div class="tag-container">
     {% for tag in page.tags%}
         <p>{{ tag }}</p>
@@ -12,7 +12,7 @@ layout: page
 <hr>
 </h1>
 {% if page.category == "github" %}
-<a class="link github" href='{{ page.link }}' target="_blank"><span class="icon"></span>See on Github</a>
+<a class="link github" href='{{ page.link }}' target="_blank"><span class="fa fa-github"></span>See on Github</a>
 {% endif%}
 
 {% if page.category == "colab" %}

@@ -36,51 +36,65 @@ right. Three different methods were testing on solving skewed data.
 These are taking the *np.log1p*, *np.sqrt* and *scipy.stats.boxcox* of
 our dataset.
 
+<p align="center">
 <img src="https://imgur.com/DWI4zcF.png" id="fig:SalesPriceDefualt">
+</p>
+<p align="center">
+Figure 1: Histogram of default sales price.
+</p>
+
 
 ### np.sprt()
 
 The first method attempted to remove the skewness from sales price was
 with *np.sqrt*. *Np.sqrt* is simple, it just takes the square root of
 our feature list. After applying *np.sqrt* its results can seen in
-figure [2](#fig:SalePriceSqrt){reference-type="ref"
-reference="fig:SalePriceSqrt"}. While *np.sqrt* slightly unskews our
+[figure 2](#fig:SalePriceSqrt). While *np.sqrt* slightly unskews our
 data it still leaves it with a skew factor of 0.9 which is still
 relatively high.
-
-[Sales with square root method applied]{.image}
+<p align="center">
+<img src="https://imgur.com/ZbiVoAJ.png" id="fig:SalePriceSqrt">
+</p>
+<p align="center">
+Figure 2: Sales with square root method applied.
+</p>
 
 ### np.log1p()
 
 The next attempted method was *np.log1p*. *Np.log1p* is defined as:
-$$log1p(x) = log(x+1)$$ After applying *np.log1p* we achieved the
-following results as shown in figure
-[3](#fig:SalePriceLog1p){reference-type="ref"
-reference="fig:SalePriceLog1p"}. *Np.log1p* does a very good job at
+log1p(x) = log(x+1) After applying *np.log1p* we achieved the
+following results as shown in [figure
+3](#fig:SalePriceLog1p). *Np.log1p* does a very good job at
 unskewing our data. We are left with skewness of 0.12 which is very
 good.
 
-[Sales with log1p method applied]{.image}
+<p align="center">
+<img src="https://imgur.com/fEp8nIB.png" id="fig:SalePriceLog1p">
+</p>
+<p align="center">
+Figure 3: Sales with log1p method applied.
+</p>
 
 ### scipy.stats.boxcox()
 
 Finally, the method *boxcox* was attempted. *Boxcox* is defined as:
 
-$$\begin{aligned}
-boxcox(x) = \begin{cases}
-\frac{x \lambda - 1}{\lambda} & \lambda \neq 0,\\
-log(x) & \lambda = 0
-\end{cases}
-\end{aligned}$$
+<p align="center">
+<img src="https://imgur.com/qyw9Fxo.png">
+</p>
 
-With *boxcox*, a value for $\lambda$ optimally selected internally. An
+With *boxcox*, a value for lambda optimally selected internally. An
 important thing to consider is that *boxcox* requires that its input be
 non negative. All our values for sales price are non negative so
 *boxcox* can be applied. After applying *boxcox* we get the following
-given figure [4](#fig:SalePriceBoxcox){reference-type="ref"
-reference="fig:SalePriceBoxcox"}.
+given [figure 4](#fig:SalePriceBoxcox).
 
-[Sales with boxcox method applied]{.image}
+<p align="center">
+<img src="https://imgur.com/KBXfcGj.png" id="fig:SalePriceLog1p">
+</p>
+<p align="center">
+Figure 4: Sales with boxcox method applied.
+</p>
 
 Our skewness is very close to 0, this is very good.
 
@@ -114,10 +128,7 @@ The other important element to data preprocessing is to clean up missing
 and NA values. For some of the columns NA is actually an enum value and
 doesn' t need to be changed. For other columns, mainly quantitative
 ones, NA needs to be fixed. We chose to replace quantitative NA values
-with the features mode. The method used for inputing NaN values
-*imputeNumericalNan* can be found in appendix
-[11.1.2](#appendix:ImputeNaN){reference-type="ref"
-reference="appendix:ImputeNaN"}.
+with the features mode.
 
 ## Feature Merging
 
@@ -142,10 +153,7 @@ create a dataset with features that are not skewed. The method unSkew is
 selective of which features it picks to apply the log1p function to.
 First, the feature must have a high skewness, and second, if the
 skewness is worse after applying the log1p function, i.e. farther from
-0, the unSkew method will reverse its changes on that feature. The
-unSkew method can be found in appendix
-[11.1.3](#appendix:unSkew){reference-type="ref"
-reference="appendix:unSkew"}. The table
+0, the unSkew method will reverse its changes on that feature. The table
 [\[tab:unskew\]](#tab:unskew){reference-type="ref"
 reference="tab:unskew"} shows the skewness of the numerical features
 after unSkew() has been applied to them. For this table we used a unskew

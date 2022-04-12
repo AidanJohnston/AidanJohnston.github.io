@@ -1,9 +1,0 @@
-<nav class="navdark">
-  {% for item in site.data.navigation %}
-  <a href="{{ item.link }}"
-    {% if page.url == item.link %} style="font-weight: bolder;"{% endif %}
-    {% if page.url == "/" %} class="left"{% endif %}>
-    {{ item.name }}
-  </a>
-{% endfor %}
-</nav>
