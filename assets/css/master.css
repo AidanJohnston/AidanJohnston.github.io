@@ -19,10 +19,21 @@ body {
 
 .profilePicture {
     background-image: url("https://avatars2.githubusercontent.com/u/38672170?s=460&u=5fa33811b98407e0089bca6ea1121a8fb1519e84&v=4");
-    width: 300px;
-    height: 300px;
+    width: 20em;
+    height: 20em;
     background-size: cover;
     background-position: center;
+    border-radius: 50%;
+}
+
+.profileCard {
+    width: 20em;
+    height: 20em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .sectionB {
@@ -60,6 +71,7 @@ body {
     justify-content: center;
     margin-top: 50px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .navBar a {
@@ -67,10 +79,6 @@ body {
     font-size: 2em;
     color: #242424;
     text-decoration: none;
-}
-
-.navBar a:last-child {
-    margin-right: 15%;
 }
 
 .navBar a:hover {
@@ -128,6 +136,8 @@ body {
 .tag-container {
     display: flex;
     align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .tag-container p {
@@ -167,7 +177,6 @@ body {
     font: bold;
     margin-right: 10px;
 }
-
 
 .sectionF {
     color: white;
@@ -225,15 +234,17 @@ body {
 
 .socials {
     display: flex;
-    overflow: hidden;
+    overflow: warp;
+    justify-content: center;
 }
 
 .socials a {
     font: bold;
-    font-size: larger;
+    font-size: 1.5em;
     margin: 6px;
     text-decoration: none;
     cursor: pointer;
+    color: inherit;
 }
 
 .sectionAContainer {
