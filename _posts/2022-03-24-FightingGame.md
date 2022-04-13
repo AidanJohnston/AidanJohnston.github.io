@@ -74,7 +74,19 @@ Figure 4: Importing animations into Unity
 
 
 ## Attack Frame Data
-For each attack, it has damage, guard type, startup frames, active frames, recovery frames, on hit difference, and on block difference.  Their values are described in table 2.  The attack class is described later on in more depth.
+For each attack, it has damage, guard type, startup frames, active frames, recovery frames, on hit difference, and on block difference.  Their values are described in table 1.  The attack class is described later on in more depth.
+
+|     Input    |  Damage  | Guard | Startup | Active | Recovery | onBlock | onHit |
+|:------------:|:--------:|:-----:|:-------:|:------:|:--------:|:-------:|:-----:|
+|     Cross    |    21    |  All  |    7    |    6   |    10    |    -6   |   -5  |
+|   MultiKick  | 6x3 (18) |  All  |    5    |   20   |     6    |    +1   |   +2  |
+|     Kick     |    16    |  All  |    7    |    6   |     5    |    -5   |   -3  |
+|     Knee     |    15    |  All  |    5    |    5   |     5    |    -2   |   +3  |
+|     Check    |    13    |  All  |    16   |    5   |     7    |    +3   |   +4  |
+|      Jab     |     7    |  All  |    5    |    3   |     7    |    -1   |   +2  |
+|     Upper    |    17    |  All  |    6    |    3   |     4    |    -2   |   -4  |
+|   SweepKick  |    11    |  Low  |    13   |    4   |    10    |    -5   |   -4  |
+| CrouchingJab |    10    |  Low  |    5    |    3   |     7    |    -1   |   +2  |
 
 # Designing the Player State Machine
 The Player is controlled by an IInputManager, these inputs feed into their state machine which dictates which animations are played, what direction they move, and if impulses should be applied.  IInputManager is discussed more in depth later on.  Our state machine is controlled mainly by triggers, which are “boolean-like”.  Triggers, when activated will switch to a TRUE state but will automatically switch FALSE when a state changes, this allows for us to “set and forget” each state's triggers.  Our player is capable of jumping, standing still (idle), blocking, crouching, dashing, walking, and attacking.  When a player inputs an attack command as an input, that attack information is updated in the attack node.  Things like animation clips, and attack damage are updated to reflect the current attack. 
@@ -202,6 +214,15 @@ Figure 10: The agents inputs
 In total when controlling the player in the game there are seven different buttons to press.  Up, down, left, right, attack1, attack2, and block.
 The agent outputs five continuous variables between -1 and 1.  These values are used to determine the buttons pressed for the agent.  Because a float value cant directly be used to determine if a button has been pressed, we used thresholds for determining if the agent wanted to press the button.  The values for up and down, and left and right were used from the same continuous output; you can’t move left and right at the same time. 
 
+| Continuous Variable |  Button  | Threshold |
+|:-------------------:|:--------:|:---------:|
+|      Horizontal     |   Left   |   < -0.4  |
+|      Horizontal     |   Right  |   > 0.4   |
+|       Vertical      |    Up    |   > 0.75  |
+|       Vertical      |   Down   |  < -0.125 |
+|       Attack 1      | Attack 1 |   > 0.75  |
+|       Attack 2      | Attack 2 |   > 0.75  |
+
 ## Training Multiple Matches
 When training matches inside the unity environment, first a previously stored model from the model buffer is selected.  This model plays the game through inference and plays against the most recent policy which is actively training.  When the round ends, the most recent ELO policies are updated.
 
@@ -225,6 +246,13 @@ Figure 12: Training multiple agents
 Initially when designing the reward function we decided to start with a spare reward.  The idea being that if the agent is given too much direction, it will “rail road” towards those rewards.  And while this creates an okay way for the agent to play the game, the agent may not completely explore the action space.  The first rewards we started with were for winning and losing a match.  This is the definite goal of the agent.  The agent receives +1 reward if it wins, 0 if there is a draw, and -1 if they lose.
 As we tested we decided to introduce smaller rewards when the agent lands a hit or gets hit.  We picked a small value for this to not overshadow the agent's primary goal of winning the match.
 In the end the following extrinsic rewards were defined for the agent:
+
+|   Action   | Reward |
+|:----------:|:------:|
+|  Land Hit  |  + 0.01  |
+|   Get Hit  |  - 0.01  |
+| Lose Match |   + 1   |
+|  Win Match |    - 1   |
 
 ## Curiosity Reward
 Along with extrinsic reward, the agent also receives intrinsic rewards in the form of curisocity.  ML-Agents implements [6]. In short, the agent receives small intrinsic rewards for encountering states which are surprising to it.  Along with this, the goal is to filter unnecessary noise from the agent's state.
