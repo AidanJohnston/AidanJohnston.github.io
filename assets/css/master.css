@@ -60,6 +60,10 @@ body {
     padding-bottom: 30px;
 }
 
+.sectionC p {
+    font-size: 1.3em;
+}
+
 @media only screen and (max-width: 1200px) {
     .sectionC {
         padding-left: 10%;
