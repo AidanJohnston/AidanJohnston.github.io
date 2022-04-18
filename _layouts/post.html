@@ -11,12 +11,17 @@ layout: page
 
 <hr>
 </h1>
+
+{% if page.sitelink %}
+<a class="link site" href='{{ page.sitelink }}' target="_blank">See Live Demo<span class="fa fa-external-link"></span></a>
+{% endif %}
+
 {% if page.category == "github" %}
-<a class="link github" href='{{ page.link }}' target="_blank"><span class="fa fa-github"></span>See on Github</a>
+<a class="link github" href='{{ page.gitlink }}' target="_blank">See on Github<span class="fa fa-external-link"></span></a>
 {% endif%}
 
 {% if page.category == "colab" %}
-<a class="link colab" href='{{ page.link }}' target="_blank"><span class="icon"></span>See on Google Colab</a>
+<a class="link colab" href='{{ page.gitlink }}' target="_blank">See on Google Colab<span class=" fa fa-external-link"></span></a>
 {% endif %}
 
 <div class="markdown-body">
