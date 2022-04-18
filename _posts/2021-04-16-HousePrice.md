@@ -37,7 +37,7 @@ These are taking the *np.log1p*, *np.sqrt* and *scipy.stats.boxcox* of
 our dataset.
 
 <p align="center">
-<img src="https://imgur.com/DWI4zcF.png" id="fig:SalesPriceDefualt">
+<img src="/assets/img/HousePrice/SalePriceDefault.png" id="fig:SalesPriceDefualt">
 </p>
 <p align="center">
 Figure 1: Histogram of default sales price.
@@ -53,7 +53,7 @@ our feature list. After applying *np.sqrt* its results can seen in
 data it still leaves it with a skew factor of 0.9 which is still
 relatively high.
 <p align="center">
-<img src="https://imgur.com/ZbiVoAJ.png" id="fig:SalePriceSqrt">
+<img src="\assets\img\HousePrice\SalePriceSqrt.png" id="fig:SalePriceSqrt">
 </p>
 <p align="center">
 Figure 2: Sales with square root method applied.
@@ -69,7 +69,7 @@ unskewing our data. We are left with skewness of 0.12 which is very
 good.
 
 <p align="center">
-<img src="https://imgur.com/fEp8nIB.png" id="fig:SalePriceLog1p">
+<img src="\assets\img\HousePrice\SalePriceLog1p.png" id="fig:SalePriceLog1p">
 </p>
 <p align="center">
 Figure 3: Sales with log1p method applied.
@@ -90,7 +90,7 @@ non negative. All our values for sales price are non negative so
 given [figure 4](#fig:SalePriceBoxcox).
 
 <p align="center">
-<img src="https://imgur.com/KBXfcGj.png" id="fig:SalePriceLog1p">
+<img src="\assets\img\HousePrice\SalePriceBoxcox.png" id="fig:SalePriceLog1p">
 </p>
 <p align="center">
 Figure 4: Sales with boxcox method applied.
@@ -153,23 +153,53 @@ create a dataset with features that are not skewed. The method unSkew is
 selective of which features it picks to apply the log1p function to.
 First, the feature must have a high skewness, and second, if the
 skewness is worse after applying the log1p function, i.e. farther from
-0, the unSkew method will reverse its changes on that feature. The table
-[\[tab:unskew\]](#tab:unskew){reference-type="ref"
-reference="tab:unskew"} shows the skewness of the numerical features
+0, the unSkew method will reverse its changes on that feature. The table shows the skewness of the numerical features
 after unSkew() has been applied to them. For this table we used a unskew
 threshold of **0.5**, where feature with a skewness under **0.5** are
 not touched. Notice how some features even with a skewness above **0.5**
 do not change. This is because after having the log1p method applied to
 them, their skewness moved away from 0.
 
+| Feature      | Before unSkew() | After unSkew() |
+|--------------|-----------------|----------------|
+| OverallQual  | 0.197212        | 0.197212       |
+| YearBuilt    | -0.600114       | -0.600114      |
+| YearRemodAdd | -0.451252       | -0.451252      |
+| MasVnrArea   | 2.614936        | 0.537294       |
+| ExterQual    | -0.786786       | -0.786786      |
+| BsmtQual     | 1.269195        | -0.526654      |
+| TotalBsmtSF  | 1.157489        | 1.157489       |
+| HeatingQC    | 0.550192        | 0.287109       |
+| 1stFlrSF     | 1.47036         | 0.064861       |
+| GrLivArea    | 1.27001         | 0.013194       |
+| FullBath     | 0.167692        | 0.167692       |
+| KitchenQual  | -0.438761       | -0.438761      |
+| TotRmsAbvGrd | 0.758757        | 0.035125       |
+| Fireplaces   | 0.733872        | 0.23771        |
+| FireplaceQu  | -0.172269       | -0.172269      |
+| GarageYrBlt  | -0.468752       | -0.468752      |
+| GarageFinish | -0.135604       | -0.135604      |
+| GarageCars   | -0.218705       | -0.218705      |
+| GarageArea   | 0.23938         | 0.23938        |
+| SqFtPerRoom  | 0.894451        | 0.201255       |
+| TotalQuality | -0.564413       | -0.564413      |
+| TotalBath    | 0.499847        | 0.499847       |
+| TotalSF      | 1.516264        | -0.36184       |
+| SalePrice    | 1.880940746     | 0.121221913    |
+
 We experimented with different skewthresholds. It was found that it was
 best to only unskew the extremely highly skewed feature, rather than to
 applied a unskew method to everything. A final unskew threshold of
-**1.5** was chosen based on figure [5](#fig:unskew){reference-type="ref"
-reference="fig:unskew"}. Note, this means that the only feature that are
+**1.5** was chosen based on [figure 5](#fig:unskew). Note, this means that the only feature that are
 being unskewed are *SalePrice* and *TotalSF*.
 
-[Change in model score, based on skewthreshold]{.image}
+<p align="center">
+<img src="\assets\img\HousePrice\unskewPlot.png" id="fig:unskew">
+</p>
+<p align="center">
+Figure 5: Sales with boxcox method applied.
+</p>
+
 
 ## Ordinal Encoding
 
@@ -182,10 +212,15 @@ thing that matters is that these values are ranked and ordered.
 Assigning low values to "favorable" attributes results in a negative
 correlation towards sales price.
 
-[Correlation Matrix of Ordinal Features and Sales Prices]{.image}
+<p align="center">
+<img src="\assets\img\HousePrice\corrMatrix.png" id="fig:ordinalCorr">
+</p>
+<p align="center">
+Figure 6: Correlation Matrix of Ordinal Features and Sales Prices.
+</p>
 
-Looking at figure [6](#fig:ordinalCorr){reference-type="ref"
-reference="fig:ordinalCorr"} which shows the correlation between all the
+
+Looking at [figure 6](#fig:ordinalCorr) which shows the correlation between all the
 ordinal data as well as sale price, we can see that most of the ordinal
 data has a negative correlation with sales prices.
 
@@ -200,8 +235,9 @@ Scaler, MaxAbsScaler, Robust Scaler and MinMaxScaler.
 
 Standard scaling is a method used to scale values so that the mean of
 the feature is 0 and the standard deviation is 1. The following equation
-is used by the standard scaler. $$\begin{aligned}
-z = \frac{x - u}{s}\end{aligned}$$ Standard scaling is a method used to
+is used by the standard scaler. 
+
+Standard scaling is a method used to
 scale values so that the mean of the feature is 0 and the standard
 deviation is 1. The following equation is used by the standard scaler.
 
