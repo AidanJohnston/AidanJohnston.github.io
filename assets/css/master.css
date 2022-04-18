@@ -190,19 +190,20 @@ body {
 .link {
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.1em;
     margin: 10px;
     cursor: pointer;
 }
 
 .link .span {
-    float: left;
-    width: 20px;
-    height: 20px;
+    float: right;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 5px;
 }
 
 .link.github {
@@ -213,13 +214,6 @@ body {
     background-color: #242424;
 }
 
-.link.github.icon {
-    background: url(/assets/img/GitHub-Mark-Light-120px-plus.png) no-repeat;
-    float: left;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px
-}
 
 .link.colab {
     background-color: #faab00;
@@ -227,6 +221,14 @@ body {
 
 .link.colab:hover {
     background-color: #b87d00;
+}
+
+.link.site {
+    background-color: #1450aa;
+}
+
+.link.site:hover {
+    background-color: #0c336e;
 }
 
 .link.colab.icon {
