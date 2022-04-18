@@ -3,7 +3,8 @@ layout: post
 title: 'Grocery Store Full Stack Webapp'
 tags: Angular Typescript Firebase
 category: github
-link: https://github.com/AidanJohnston/GroceryStore
+gitlink: https://github.com/AidanJohnston/GroceryStore
+sitelink: https://grocerystore.aidanjohnston.ca
 ---
 Implemented a full stack grocery store web app using Angular and Firebase following an agile
 methodology.
@@ -177,30 +178,3 @@ export interface Address {
     postalCode : string,
 }
 ```
-## Pages
-
-### about
-
-### account
-
-### cart
-
-### forgot-password
-
-### home
-
-### login
-
-### page-not-found
-
-### search
-
-### signup
-
-### verify-email
-
-## Testing
-
-### Unit Testing
-
-### Acceptance Testing
