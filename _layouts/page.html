@@ -16,10 +16,6 @@
     <title>
     {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
     </title>
-
-        {% if jekyll.environment == 'production' %}
-        {% include analytics.html %}
-        {% endif %}
     </head>
     <body>
         {% include navigation.html%}
