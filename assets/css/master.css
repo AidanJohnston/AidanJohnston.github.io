@@ -276,3 +276,19 @@ iframe{
     height: 310px;
     align-self: center;
 }
+
+.viewmore {
+    margin: 10px;
+    border-radius: 3px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em !important;
+    background-color: #faab00;
+    color: #050505 !important;
+}
+
+.viewmore:hover {
+    background-color: #b87d00;
+}
