@@ -41,8 +41,8 @@ body {
     background-color: #121212;
     color: white;
     padding-top: 30px;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 25%;
+    padding-right: 25%;
     padding-bottom: 30px;
 }
 
@@ -109,7 +109,7 @@ body {
 .card {
     background-color: #242424;
     box-shadow: 0 1px 10px #050505;
-    flex: 0 0 85%;
+    flex: 0 1 100%;
     margin-bottom: 20px;
     transition: 0.3s;
     box-sizing: content-box;
@@ -148,7 +148,7 @@ body {
 .tag-container p {
     background-color: #383838;
     color: white;
-    margin: 10px;
+    margin: 5px;
     border-radius: 3px;
     padding: 10px 10px;
     display: flex;
