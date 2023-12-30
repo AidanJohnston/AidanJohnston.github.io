@@ -1,0 +1,8 @@
+- name: Nimona
+  image_path: ./assets/img/movie/nimona.jpeg
+  link: https://www.imdb.com/title/tt19500164
+- name: The Garfield Movie
+  image_path: ./assets/img/movie/garfield.jpg
+  link: https://www.imdb.com/title/tt5779228
+- name: That Chirstmas  
+  image_path: ./assets/img/movie/that-chirstmas.jpg

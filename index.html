@@ -14,39 +14,20 @@ permalink: /
 </div>
 
 <div class="sectionB" id="projects">
-    <h2>Movies I've worked on</h2>
-    <div class="movie-container">
-        <div class="movie-card">
-            <a href="https://www.imdb.com/title/tt19500164" target="_blank">
-                <img src="./assets/img/movie/nimona.jpeg" alt="Nimona Movie Poster">
-            </a>
-            <h2>Nimona</h2>
+    <h2>Features I've worked on</h2>
+    <div class="movies-container">
+        {% for item in site.data.movies %}
+        <div class="movie-contianer">
+            <a href="{{item.link}}" target="_blank">{{item.name}}</a>
+            <div class="movie-card">
+                <a href="{{item.link}}" target="_blank">
+                    <img loading="lazy" src="{{item.image_path}}" alt="{{item.name}} Movie Poster">
+                </a>
+            </div>
         </div>
-        <div class="movie-card">
-            <img src="./assets/img/movie/garfield.jpg" alt="Garfield Movie Poster" srcset="">
-        </div>
-        <div class="movie-card">
-            <a href="https://www.imdb.com/title/tt14855468/" target="_blank">
-                <img src="./assets/img/movie/that-chirstmas.jpg" alt="That Chirstmas Movie Poster">
-            </a>
-        </div>
-        <div class="movie-card">
-            <a href="https://www.imdb.com/title/tt14855468/" target="_blank">
-                <img src="./assets/img/movie/that-chirstmas.jpg" alt="That Chirstmas Movie Poster">
-            </a>
-        </div>
-        <div class="movie-card">
-            <a href="https://www.imdb.com/title/tt14855468/" target="_blank">
-                <img src="./assets/img/movie/that-chirstmas.jpg" alt="That Chirstmas Movie Poster">
-            </a>
-        </div>
-        <div class="movie-card">
-            <a href="https://www.imdb.com/title/tt14855468/" target="_blank">
-                <img src="./assets/img/movie/that-chirstmas.jpg" alt="That Chirstmas Movie Poster">
-            </a>
-        </div>
+        {% endfor %}
     </div>
-    <h2>Some Projects</h2>
+    <h2>Projects</h2>
     <div class="card-container">
         {% for post in site.posts %}
         <div class="card">
