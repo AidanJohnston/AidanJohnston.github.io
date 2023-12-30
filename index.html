@@ -6,14 +6,47 @@ permalink: /
 <div class="sectionA">
     {% include navigation.html %}
     <div class="profileCard">
-        <div class="profilePicture"></div>
-        <h1>Aidan Johnston</h1>
-        <p>Bachelors of Engineering (Software Engineering)</p>
+        <h1 id="shadow">Aidan Johnston</h1>
+        <hr>
         {% include socials.html%}
+        
     </div>
 </div>
+
 <div class="sectionB" id="projects">
-    <h2>Projects</h2>
+    <h2>Movies I've worked on</h2>
+    <div class="movie-container">
+        <div class="movie-card">
+            <a href="https://www.imdb.com/title/tt19500164" target="_blank">
+                <img src="./assets/img/movie/nimona.jpeg" alt="Nimona Movie Poster">
+            </a>
+            <h2>Nimona</h2>
+        </div>
+        <div class="movie-card">
+            <img src="./assets/img/movie/garfield.jpg" alt="Garfield Movie Poster" srcset="">
+        </div>
+        <div class="movie-card">
+            <a href="https://www.imdb.com/title/tt14855468/" target="_blank">
+                <img src="./assets/img/movie/that-chirstmas.jpg" alt="That Chirstmas Movie Poster">
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="https://www.imdb.com/title/tt14855468/" target="_blank">
+                <img src="./assets/img/movie/that-chirstmas.jpg" alt="That Chirstmas Movie Poster">
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="https://www.imdb.com/title/tt14855468/" target="_blank">
+                <img src="./assets/img/movie/that-chirstmas.jpg" alt="That Chirstmas Movie Poster">
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="https://www.imdb.com/title/tt14855468/" target="_blank">
+                <img src="./assets/img/movie/that-chirstmas.jpg" alt="That Chirstmas Movie Poster">
+            </a>
+        </div>
+    </div>
+    <h2>Some Projects</h2>
     <div class="card-container">
         {% for post in site.posts %}
         <div class="card">
@@ -31,10 +64,4 @@ permalink: /
         </div>
         {% endfor %}
     </div>
-</div>
-<div class="sectionC" id="about">
-    <h2>About</h2>
-    <p>
-        Originally from Thunder Bay Ontario, Aidan (he/him) has recently completed his Bachelor of Engineering in Software Engineering at Lakehead University.  Aidan’s interests include developing new fighting video games and learning about new technologies. Aidan is also interested in machine learning and reinforcement learning for AI. Aidan recently presented at Lakehead’s Research and Innovation Week where he presented his work and research on deep reinforcement learning in video games that examined new ways to create an AI based fighting game.
-    </p>
 </div>

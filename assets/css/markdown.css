@@ -2,8 +2,8 @@
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     margin: 0;
-    color: #24292f;
-    background-color: #ffffff;
+    color: var(--fg);
+    background-color: var(--bg);
     
     font-size: 1.1em;
     line-height: 1.5;

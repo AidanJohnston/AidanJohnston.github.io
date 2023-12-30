@@ -3,6 +3,165 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: "tf2secondary";
+    src: url('../fonts/TF2secondary.ttf');
+}
+
+:root {
+  --bg_h: #1d2021;
+  --bg:   #282828;
+  --bg_s: #32302f;
+  --bg1:  #3c3836;
+  --bg2:  #504945;
+  --bg3:  #665c54;
+  --bg4:  #7c6f64;
+
+  --fg:  #fbf1c7;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+
+  --red:    #fb4934;
+  --green:  #b8bb26;
+  --yellow: #fabd2f;
+  --blue:   #83a598;
+  --purple: #d3869b;
+  --aqua:   #8ec07c;
+  --gray:   #928374;
+  --orange: #fe8019;
+
+  --red-dim:    #cc2412;
+  --green-dim:  #98971a;
+  --yellow-dim: #d79921;
+  --blue-dim:   #458588;
+  --purple-dim: #b16286;
+  --aqua-dim:   #689d6a;
+  --gray-dim:   #a89984;
+  --orange-dim: #d65d0e;
+}
+
+/* Normal Colors */
+
+.red {
+  color: var(--red);
+}
+
+.green {
+  color: var(--green);
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.aqua {
+  color: var(--aqua);
+}
+
+.gray {
+  color: var(--gray);
+}
+
+.orange {
+  color: var(--orange);
+}
+
+/* Dim Colors */
+
+.red-dim {
+  color: var(--red-dim);
+}
+
+.green-dim {
+  color: var(--green-dim);
+}
+
+.yellow-dim {
+  color: var(--yellow-dim);
+}
+
+.blue-dim {
+  color: var(--blue-dim);
+}
+
+.purple-dim {
+  color: var(--purple-dim);
+}
+
+.aqua-dim {
+  color: var(--aqua-dim);
+}
+
+.gray-dim {
+  color: var(--gray-dim);
+}
+
+.orange-dim {
+  color: var(--orange-dim);
+}
+
+/* Foreground Colors */
+
+.fg {
+  color: var(--fg);
+}
+
+.fg1 {
+  color: var(--fg1);
+}
+
+.fg2 {
+  color: var(--fg2);
+}
+
+.fg3 {
+  color: var(--fg3);
+}
+
+.fg4 {
+  color: var(--fg4);
+}
+
+/* Background Colors */
+
+.bg-hard {
+  color: var(--bg_h);
+}
+
+.bg {
+  color: var(--bg);
+}
+
+.bg-soft {
+  color: var(--bg_s);
+}
+
+.bg1 {
+  color: var(--bg1);
+}
+
+.bg2 {
+  color: var(--bg2);
+}
+
+.bg3 {
+  color: var(--bg3);
+}
+
+.bg4 {
+  color: var(--bg4);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -15,42 +174,17 @@ body {
 
 .sectionA {
     height: 100vh;
-}
-
-.profilePicture {
-    background-image: url("https://avatars2.githubusercontent.com/u/38672170?s=460&u=5fa33811b98407e0089bca6ea1121a8fb1519e84&v=4");
-    width: 20em;
-    height: 20em;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    border: #121212 solid 5px;
-}
-
-.profileCard {
-    width: 20em;
-    height: 20em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    background-color: var(--bg);
+    color: var(--fg);
 }
 
 .sectionB {
-    background-color: #121212;
-    color: white;
+    background-color: var(--bg_h);
+    color: var(--fg);
     padding-top: 30px;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-bottom: 30px;
-}
-
-@media only screen and (max-width: 1200px) {
-    .sectionB {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
 }
 
 .sectionC {
@@ -58,6 +192,8 @@ body {
     padding-left: 20%;
     padding-right: 20%;
     padding-bottom: 30px;
+    color: var(--fg);
+    background-color: var(--bg);
 }
 
 .sectionC p {
@@ -74,15 +210,16 @@ body {
 .navBar {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
     width: 100%;
     flex-wrap: wrap;
+    background-color: var(--bg1);
+    box-shadow: 0px 25px 0px var(--bg_h);
 }
 
 .navBar a {
     padding: 15px;
     font-size: 2em;
-    color: #242424;
+    color: var(--fg1);
     text-decoration: none;
 }
 
@@ -90,11 +227,102 @@ body {
     text-decoration: underline;
 }
 
+.navBar a:first-child {
+    transition: all 0.5s;
+    position: relative;
+    transform: translateX(0%);
+}
+
+.navHero {
+    transform: translateX(-100%);
+}
+
+
 @media only screen and (max-width: 600px) {
     .navBar {
         position: static;
         margin-top: 20px;
     }
+}
+
+.profileCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.profileCard h1{
+  transition: all 0.5s;
+  font-size: 4em;
+  text-align: center;
+  font-family: "Meta", sans-serif;
+  cursor: default;
+  text-shadow: none;
+}
+
+.profileCard h1:hover {
+  text-shadow: 10px 10px 0px var(--green-dim),
+    10px 10px 0px var(--orange-dim),
+    15px 15px 0px var(--purple-dim),
+    20px 20px 0px var(--red-dim),
+    25px 25px 1px var(--yellow-dim);
+}
+
+.navBar {
+    position: -webkit-sticky;
+	position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.socials {
+    display: flex;
+    overflow: warp;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+.socials a {
+    font: bold;
+    margin: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.sectionD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--bg3);
+    color: var(--fg);
+    padding-bottom: 30px;
+    bottom: 0;
+}
+
+.sectionD p {
+    color: var(--fg);
+    font: bold;
+    margin-right: 10px;
+}
+
+.sectionD a {
+  color: var(--bg4);
+  text-decoration: none;
+}
+
+.sectionD a:hover {
+  text-decoration: underline;
+}
+
+.tf2 {
+  cursor: pointer;
+  font-family: 'tf2secondary';
+  text-shadow: 1px 1px 0px var(--fg);
 }
 
 .card-container {
@@ -107,18 +335,60 @@ body {
 }
 
 .card {
-    background-color: #242424;
-    box-shadow: 0 1px 10px #050505;
+    background-color: var(--bg);
     flex: 0 1 100%;
     margin-bottom: 20px;
     transition: 0.3s;
     box-sizing: content-box;
     display: inline-block;
     padding: 15px;
+    border-radius: 18px;
 }
 
-.card:hover {
-    box-shadow: 0 20px 20px #050505;
+.movie-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    position: relative;
+    width: 325px;
+    height: 450px;
+    background: #000;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    top: 0;
+    left: 0;
+    margin-bottom: 1.5em;
+}
+
+.movie-card img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+    cursor: pointer;
+}
+.movie-card h2 {
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+
+
+.movie-card img:hover {
+  transform: scale(1.1);
 }
 
 @media only screen and (max-width: 800px) {
@@ -129,7 +399,7 @@ body {
 }
 
 .card a {
-    color: white;
+    color: var(--fg);
     text-decoration: none;
     cursor: pointer;
 }
@@ -146,7 +416,7 @@ body {
 }
 
 .tag-container p {
-    background-color: #383838;
+    background-color: var(--bg4);
     color: white;
     margin: 5px;
     border-radius: 3px;
@@ -284,8 +554,8 @@ iframe{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #faab00;
-    color: #050505 !important;
+    background-color: var(--yellow-dim);
+    color: var(--bg);
     width: 25%;
 }
 
@@ -296,5 +566,5 @@ iframe{
 }
 
 .viewmore:hover {
-    background-color: #fabb33;
+    background-color: var(--yellow);
 }
